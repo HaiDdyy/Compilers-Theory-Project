@@ -12,3 +12,4 @@ E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\ref\
 E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.exe
 E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.runtimeconfig.json
 E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.genruntimeconfig.cache
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.sourcelink.json
