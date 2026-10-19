@@ -1,0 +1,14 @@
+E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.deps.json
+E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.dll
+E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.pdb
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.GeneratedMSBuildEditorConfig.editorconfig
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.AssemblyInfoInputs.cache
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.AssemblyInfo.cs
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.csproj.CoreCompileInputs.cache
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.dll
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\refint\RegularExpressions.dll
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.pdb
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\ref\RegularExpressions.dll
+E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.exe
+E:\Downloads\RegularExpressions\RegularExpressions\bin\Debug\net8.0-windows\RegularExpressions.runtimeconfig.json
+E:\Downloads\RegularExpressions\RegularExpressions\obj\Debug\net8.0-windows\RegularExpressions.genruntimeconfig.cache
