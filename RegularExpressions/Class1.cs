@@ -7,13 +7,14 @@ namespace RegularExpressions
     {
         static void Main(string[] args)
         {
+           
             string Identifier = @"^[A-Za-z_][A-Za-z0-9_]*$"; //begins with a letter or underscore
-            string ReservedWords = @"^(var| val| fun| class| if|else| while| for | in| return| true|false| null|new| print| input| break| continue)$";
+            string ReservedWords = @"^(var|val|fun|class|if|else|while|for|in|return|true|false|null|new|print|input|break|continue)$";
             // all reserved words in Rynix
-            string DataTypes =@"^(Int|Float|String|Bool|Char|Array)$";
+            string DataTypes = @"^(Int|Float|String|Bool|Char|Void|Array)$";
 
             string integer = @"^-?\d+$";
-            string floating_point = @"^-?\d+.\d+$";
+            string floating_point = @"^-?\d+\.\d+$";
 
             string Boolean = @"^(true|false|null)$";
 
@@ -23,7 +24,7 @@ namespace RegularExpressions
             string singleLineCommentRegex = @"^//.*$";
             string multiLineCommentRegex = @"^/\*[\s\S]*?\*/$";
 
-            string operators = @"^[+|-|*|%]+$";
+            string operators = @"^[+\-*/%]+$";
 
             // var name: Type = value
             string variableDeclaration = @"^var\s+[a-zA-Z_][a-zA-Z0-9_]*\s*:\s*(Int|Float|String|Bool|Char|Array<\w+>)\s*=\s*.+$";
@@ -47,13 +48,13 @@ namespace RegularExpressions
 
             // Function Parameters & Return
             string parameters = @"\([^)]*\)";
-            string returnType = @":\s*(Int|Float|String|Bool|Char|Array<\w+>)";
+            string returnType = @":\s*(Int|Float|String|Bool|Char|Void|Array<\w+>)";
             string returnStatement = @"^\s*return\s+.+;?$";
 
             // fun name(params): Type { ... }
-            string functionDefinition = @"^fun\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\([^)]*\)\s*:\s*(Int|Float|String|Bool|Char|Array<\w+>)\s*\{[\s\S]*\}$";
+            string functionDefinition = @"^fun\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\([^)]*\)\s*:\s*(Int|Float|String|Bool|Char|Void|Array<\w+>)\s*\{[\s\S]*\}$";
 
-           
+
             // name(arguments) ->
             string functionCall = @"^[a-zA-Z_][a-zA-Z0-9_]*\s*\([^)]*\)$";
 
@@ -73,7 +74,7 @@ namespace RegularExpressions
             // var student: Student = new Student()
             string objectCreation = @"^var\s+[a-zA-Z_][a-zA-Z0-9_]*\s*:\s*[a-zA-Z_][a-zA-Z0-9_]*\s*=\s*new\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\([^)]*\)$";
             //ba2y object properties done mn elrynix programming language pdf
-            
+
             string ObjectProperties = @"^[a-zA-Z_][a-zA-Z0-9_]*\.[a-zA-Z_][a-zA-Z0-9_]*\s*=\s*.+$";
             // Constructor 
             string constructor = @"^init\s*\([^)]*\)\s*\{[\s\S]*\}$";
@@ -84,10 +85,15 @@ namespace RegularExpressions
             // Input & Output
             string printCall = @"^print\s*\([^)]*\)$";
             string inputCall = @"^var\s+[a-zA-Z_][a-zA-Z0-9_]*\s*:\s*(Int|Float|String|Bool|Char|Array<\w+>)\s*=\s*input\s*\(\)$";
-            //ba2y elscope of variables , null values ,and null checking mn elrynix programming language pdf
 
+            // Opening and closing braces
+            string blockRegex = @"^\s*\{[\s\S]*\}\s*$";
+
+            // Function definition - to identify a function scope
+            string functionScope = @"^fun\s+[A-Za-z_]\w*\s*\([^)]*\)\s*:\s*(Int|Float|String|Bool|Char|Void|Array<\w+>)\s*\{[\s\S]*\}$";
+            // Null Assignement
             string nullassignment = @"^(var|val)\s+[a-zA-Z_][a-zA-Z0-9_]*\s*:\s*(Int|Float|String|Bool|Char|Array<\w+>)\s*=\s*null\s*$";
-
+            // Null Comparison
             string nullcomparison = @"^[a-zA-Z_][a-zA-Z0-9_]*\s*(==|!=)\s*null\s*$";
 
 
@@ -123,15 +129,16 @@ namespace RegularExpressions
             Console.WriteLine(Regex.IsMatch("var size: Int = numbers.length", arraylength));
             Console.WriteLine(Regex.IsMatch("for item in numbers { print(item) }", arraylooping));
             Console.WriteLine(Regex.IsMatch("class Student {var name: String var age: Int }", classDefinition));
-            Console.WriteLine(Regex.IsMatch("var student : Student = new Student()", objectCreation)); 
-            Console.WriteLine(Regex.IsMatch("student.name = \"Ahmed\"", ObjectProperties)); 
-            Console.WriteLine(Regex.IsMatch("init(n: String, a: Int) {name = n age = a}", constructor)); 
-            Console.WriteLine(Regex.IsMatch("fun display(): Void {print(name)}}}", methodRegex)); 
-            Console.WriteLine(Regex.IsMatch("print(\"Hello Rynix\")", printCall)); 
+            Console.WriteLine(Regex.IsMatch("var student : Student = new Student()", objectCreation));
+            Console.WriteLine(Regex.IsMatch("student.name = \"Ahmed\"", ObjectProperties));
+            Console.WriteLine(Regex.IsMatch("init(n: String, a: Int) {name = n age = a}", constructor));
+            Console.WriteLine(Regex.IsMatch("fun display(): Void {print(name)}}}", methodRegex));
+            Console.WriteLine(Regex.IsMatch("print(\"Hello Rynix\")", printCall));
             Console.WriteLine(Regex.IsMatch("var name: String = input()", inputCall));
+            Console.WriteLine(Regex.IsMatch("{ var x: Int = 10 }", blockRegex));
+            Console.WriteLine(Regex.IsMatch("fun test(): Void { var number: Int = 5 }", functionScope));
             Console.WriteLine(Regex.IsMatch("var x : Int = null", nullassignment));
             Console.WriteLine(Regex.IsMatch("name == null", nullcomparison));
 
-        }
-    }
+        }    }
 }
